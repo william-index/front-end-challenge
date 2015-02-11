@@ -2,6 +2,8 @@
 Build a single page application to display projects with detailed information. There are 2 main views: a list view and a detail view.
 
 ## Need To Have
+The application should run on some MVC framework. Preferably Backbone, but you can use Angular, Ember, etc.
+
 ### List View
 - The list view is a table with basic project information in it
 - Clicking on a project name will bring you to the detail view for that project
