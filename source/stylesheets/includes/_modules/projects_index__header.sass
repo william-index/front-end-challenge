@@ -1,0 +1,44 @@
+header.projects_index__header
+  +block(98%, 62px)
+  float: left
+  position: relative
+  border-bottom: 1px solid $orange
+  margin-left: 1%
+
+  h1
+    +block(auto, 32px)
+    position: absolute
+    top: 15px
+    left: 4%
+    +font(18, 32)
+    font-family: $sans
+    color: $darkGrey
+
+  nav.filters
+    display: block
+    text-align: center
+    button
+      padding: 6px 8px
+      margin: 16px 4px
+      background: white
+      color: $darkGrey
+      font-style: italic
+      font-family: $sans
+      border: 1px solid $mediumGrey
+      border-radius: 4px
+      &:hover, &.active
+        background: $blue
+        color: white
+
+
+  button.add_new
+    +block(104px, 32px)
+    +font(15,32)
+    position: absolute
+    top: 15px
+    right: 0%
+    color: white
+    background: $orange
+    border-radius: 4px
+    &:hover
+      background: darken($orange, 15%)

@@ -15,21 +15,26 @@
         %button.add_new New Project
         .hr.orange
 
-        -#
-          NOTE: Column heads and the rest of the table arent
-          done as a table, this is to allow for more effective
-          css animations and layout. I would prioritize the UX
-          in this case over the html strucutre (re using a <table>)
+      -#
+        NOTE: Column heads and the rest of the table arent
+        done as a table, this is to allow for more effective
+        css animations and layout. I would prioritize the UX
+        in this case over the html strucutre (re using a <table>)
 
-          Also I shouldve iterated over this in an array, but my
-          instinct here is to go ruby, but mixing angular and ruby
-          felt dirty.... for this part at least
-        %section.column_heads.columns
-          .col{"ng-click" => "predicate = 'name'"} Project Name:
-          .col{"ng-click" => "predicate = 'owner.name'"} Owner:
-          .col{"ng-click" => "predicate = 'end_date'"} Due:
-          .col{"ng-click" => "predicate = '-total_steps'"} Steps:
-          .col{"ng-click" => "predicate = '-active'"} Active:
+        Also I shouldve iterated over this in an array, but my
+        instinct here is to go ruby, but mixing angular and ruby
+        felt dirty.... for this part at least
+      %section.column_heads.columns
+        .col.name{"ng-click" => "predicate = 'name'"}
+          %span Project Name:
+        .col.owner{"ng-click" => "predicate = 'owner.name'"}
+          %span Owner:
+        .col.due{"ng-click" => "predicate = 'end_date'"}
+          %span Due:
+        .col.steps{"ng-click" => "predicate = '-total_steps'"}
+          %span Steps:
+        .col.active{"ng-click" => "predicate = '-active'"}
+          %span Active:
 
       -# Project Listing
       .project_row{"ng-repeat" => "project in projects | filter:filters | orderBy:predicate"}

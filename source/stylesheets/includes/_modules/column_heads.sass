@@ -1,0 +1,23 @@
+section.column_heads
+  +block(98%,auto)
+  padding: 8px 0px
+  float: left
+  margin-left: 1%
+  max-height: 120px
+  overflow: hidden
+
+  .col
+    background: $darkGrey
+    height: 44px
+    +font(14,44)
+    color: white
+    font-family: $sans
+    text-indent: 3.5%
+    cursor: pointer
+    &+.col
+      text-indent: 1%
+    &+.col+.col
+      text-indent: 0%
+
+    &:hover
+      color: $orange
