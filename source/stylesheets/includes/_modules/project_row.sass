@@ -1,18 +1,67 @@
+// Overall Styling for a project row in list view
 .project_row
-  list-style: none
-  box-sizing: border-box
-  background: pink
-  border: 1px solid gold
-  max-height: 40px
+  +block(92%,auto)
+  padding: 8px 0px
+  float: left
+  margin-left: 4%
+  max-height: 120px
   overflow: hidden
-  &.ng-move, &.ng-enter
-    -webkit-transition: all linear 0.1s
-    transition: all linear 0.1s
-  &.ng-leave
-    -webkit-transition: all linear 0.1s
-    transition: all linear 0.1s
-    &.ng-leave-active
-  &.ng-move, &.ng-enter
-    max-height: 0px
-  &.ng-leave, &.ng-move.ng-move-active, &.ng-enter.ng-enter-active
-    max-height: 40px
+  &:nth-last-child(2)
+    padding-bottom: 35px
+    border-bottom: 1px solid $mediumGrey
+
+// adjsutsments to column styling from general
+// @see _style.sass
+.project_row .col
+  color: $darkGrey
+  +font(13, 20)
+  font-family: $sans
+
+  a
+    color: $blue
+    &:hover
+      text-decoration: underline
+
+// Style for text of steps completed/total
+.project_row .steps
+  position: relative
+  span
+    display: block
+    float: left
+    color: $darkGrey
+    +font(12, 10)
+    width: 12px
+    padding: 0px 5px
+    text-align: right
+    margin-top: 6px
+    &.current
+      color: $lightGreen
+      position: absolute
+      top: 0px
+      left: 0px
+
+// Progress bar and guage layout
+.progress_bar
+  +block(calc(100% - 44px), 10px)
+  float: left
+  border-radius: 3px
+  background: $mediumGrey
+  margin: 6px 0px 0px 22px
+
+.progress_bar__gauge
+  display: block
+  height: 10px
+  @extend %greenGradient
+  border-radius: 3px
+
+// Active dot indicator
+.active_marker
+  +block(14px, 14px)
+  float: right
+  background: $lightGrey
+  border: 1px solid $mediumGrey
+  border-radius: 8px
+  margin-top: 3px
+  &.active
+    background: $lightGreen
+    border-color: $lightGreen

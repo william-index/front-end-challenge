@@ -20,15 +20,21 @@
           done as a table, this is to allow for more effective
           css animations and layout. I would prioritize the UX
           in this case over the html strucutre (re using a <table>)
+
+          Also I shouldve iterated over this in an array, but my
+          instinct here is to go ruby, but mixing angular and ruby
+          felt dirty.... for this part at least
         %section.column_heads.columns
-          .col Project Name:
-          .col Owner:
-          .col Due:
-          .col Steps:
-          .col Active:
+          .col{"ng-click" => "predicate = 'name'"} Project Name:
+          .col{"ng-click" => "predicate = 'owner.name'"} Owner:
+          .col{"ng-click" => "predicate = 'end_date'"} Due:
+          .col{"ng-click" => "predicate = '-total_steps'"} Steps:
+          .col{"ng-click" => "predicate = '-active'"} Active:
 
       -# Project Listing
-      .project_row{"ng-repeat" => "project in projects | filter:filters"}
+      .project_row{"ng-repeat" => "project in projects | filter:filters | orderBy:predicate"}
         <project-row-info info="project"></project-row-info>
+
+      .clear
 
     = partial "partials/footer"

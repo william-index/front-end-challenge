@@ -1,1 +1,29 @@
+body
+  background: $lightGrey
+
+section.projects_index
+  +block(80%, auto)
+  max-width: 940px
+  border: 1px solid $mediumGrey
+  +border-top-radius(10px)
+  margin: 90px auto
+  background: white
+  padding-bottom: 60px
+
+.col
+  display: block
+  float: left
+
+  &.name
+    width: 25%
+    padding-right: 5%
+  &.owner
+    width: 20%
+  &.due
+    width: 20%
+  &.steps
+    width: 20%
+  &.active
+    width: 10%
+
 @import '_modules/project_row'

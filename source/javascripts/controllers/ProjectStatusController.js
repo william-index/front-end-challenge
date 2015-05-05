@@ -15,4 +15,7 @@ app.controller('ProjectStatusController', function($scope, $http) {
   // Tracks current filter for list
   $scope.filters = {};
 
+  // Ordering
+  $scope.predicate = 'id';
+
 });

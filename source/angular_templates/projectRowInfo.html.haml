@@ -1,13 +1,14 @@
 ---
 layout: false
 ---
-.col.name {{ info.name }}
+.col.name
+  %a{href: "#"} {{ info.name }}
 .col.owner {{ info.owner.name }}
-.col.due {{ info.end_date | date :  format : mediumDate }}
+.col.due {{ info.end_date * 1000 | date:format:mediumDate }}
 .col.steps
-  .span.current{"ng-if" => "info.current_step > 0"} {{ info.current_step }}
+  %span.current{"ng-if" => "info.current_step > 0"} {{ info.current_step }}
   .progress_bar
     .progress_bar__gauge{style: "width:{{ (info.current_step/info.total_steps)*100 | number: 0 }}%;"}
-  .span.total {{ info.total_steps }}
+  %span.total {{ info.total_steps }}
 .col.active
   .active_marker{"ng-class" => "{active: info.active}"}
