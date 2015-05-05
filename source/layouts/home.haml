@@ -1,0 +1,34 @@
+!!!
+%html
+  = partial "partials/head"
+  %body{"ng-app" => "ProjectStatusApp"}
+    = partial "partials/header"
+    %section.projects_index{"ng-controller" => "ProjectStatusController"}
+
+      -# List navigation, controls and labels
+      %header.projects_index__header
+        %h1 Projects Index
+        %nav.filters
+          %button.active View All
+          %button Active
+          %button Inactive
+        %button.add_new New Project
+        .hr.orange
+
+        -#
+          NOTE: Column heads and the rest of the table arent
+          done as a table, this is to allow for more effective
+          css animations and layout. I would prioritize the UX
+          in this case over the html strucutre (re using a <table>)
+        %section.column_heads.columns
+          .col Project Name:
+          .col Owner:
+          .col Due:
+          .col Steps:
+          .col Active:
+
+      -# Project Listing
+      .project_row{"ng-repeat" => "project in projects"}
+        <project-row-info info="project"></project-row-info>
+
+    = partial "partials/footer"
