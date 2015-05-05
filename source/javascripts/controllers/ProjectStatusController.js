@@ -13,7 +13,10 @@ app.controller('ProjectStatusController', function($scope, $http) {
     });
 
   // Tracks current filter for list
-  $scope.filters = {};
+  $scope.filters = {
+    active: ''
+  };
+  
 
   // Ordering
   $scope.predicate = 'id';

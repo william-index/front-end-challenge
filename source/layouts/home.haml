@@ -9,9 +9,9 @@
       %header.projects_index__header
         %h1 Projects Index
         %nav.filters
-          %button{"ng-click" => "filters.active = ''"} View All
-          %button{"ng-click" => "filters.active = true"} Active
-          %button{"ng-click" => "filters.active = false"} Inactive
+          %button{"ng-class" => "{active: filters.active === ''}", "ng-click" => "filters.active = ''"} View All
+          %button{"ng-class" => "{active: filters.active}", "ng-click" => "filters.active = true"} Active
+          %button{"ng-class" => "{active: filters.active === false}", "ng-click" => "filters.active = false"} Inactive
         %button.add_new New Project
         .hr.orange
 
