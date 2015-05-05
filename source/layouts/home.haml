@@ -9,9 +9,9 @@
       %header.projects_index__header
         %h1 Projects Index
         %nav.filters
-          %button.active View All
-          %button Active
-          %button Inactive
+          %button{"ng-click" => "filters.active = ''"} View All
+          %button{"ng-click" => "filters.active = true"} Active
+          %button{"ng-click" => "filters.active = false"} Inactive
         %button.add_new New Project
         .hr.orange
 
@@ -28,7 +28,7 @@
           .col Active:
 
       -# Project Listing
-      .project_row{"ng-repeat" => "project in projects"}
+      .project_row{"ng-repeat" => "project in projects | filter:filters"}
         <project-row-info info="project"></project-row-info>
 
     = partial "partials/footer"

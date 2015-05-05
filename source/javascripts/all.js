@@ -1,4 +1,5 @@
 //= require "libraries/angular.min"
+//= require "libraries/angular-animate"
 
 // Modules
 //= require "app"

@@ -11,4 +11,8 @@ app.controller('ProjectStatusController', function($scope, $http) {
     error(function(data, status, headers, config) {
       console.log('Failed to load project list @ challenge.json');
     });
+
+  // Tracks current filter for list
+  $scope.filters = {};
+
 });
