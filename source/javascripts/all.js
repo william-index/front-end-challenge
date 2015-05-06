@@ -8,3 +8,4 @@
 
 // Directives
 //= require "directives/projectRowInfo.js"
+//= require "directives/projectDetailView.js"

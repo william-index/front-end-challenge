@@ -1,0 +1,17 @@
+---
+layout: false
+---
+%article.project_details
+  %section.project_details__wrap
+  %header
+    %h1 {{ info.name }}
+  %section.project_details__details
+    {{ info.start_date * 1000 | date:format:mediumDate }} to {{ info.end_date * 1000 | date:format:mediumDate }}
+    {{ info.description }}
+  %section.project_details__owner
+    {{ info.owner.image }}
+    {{ info.owner.name }}
+
+    .progress_bar
+      .progress_bar__gauge{style: "width:{{ (info.current_step/info.total_steps)*100 | number: 0 }}%;"}
+      %span.current {{ info.current_step }} / {{ info.total_steps }}

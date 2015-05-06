@@ -2,7 +2,7 @@
 layout: false
 ---
 .col.name
-  %a{href: "#"} {{ info.name }}
+  %a {{ info.name }}
 .col.owner {{ info.owner.name }}
 .col.due {{ info.end_date * 1000 | date:format:mediumDate }}
 .col.steps

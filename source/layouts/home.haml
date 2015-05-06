@@ -37,9 +37,11 @@
           %span Active:
 
       -# Project Listing
-      .project_row{"ng-repeat" => "project in projects | filter:filters | orderBy:predicate"}
+      .project_row{"ng-click" => "showDetails(project)", "ng-repeat" => "project in projects | filter:filters | orderBy:predicate"}
         <project-row-info info="project"></project-row-info>
 
       .clear
 
+      -# Detail View
+      <project-detail-view info="selectedProject"></project-detail-view>
     = partial "partials/footer"

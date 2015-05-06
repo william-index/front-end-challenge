@@ -16,9 +16,15 @@ app.controller('ProjectStatusController', function($scope, $http) {
   $scope.filters = {
     active: ''
   };
-  
 
   // Ordering
   $scope.predicate = 'id';
+
+  // currently displayed details
+  $scope.selectedProject = {};
+
+  $scope.showDetails = function(project){
+    $scope.selectedProject = project;
+  };
 
 });
