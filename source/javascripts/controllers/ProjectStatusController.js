@@ -53,6 +53,18 @@ app.controller('ProjectStatusController', function($scope, $http) {
   $scope.hideDetails = function(){
     var _detail_view = angular.element(document.getElementById("project_details"));
     _detail_view.removeClass("project_details--active")
+  };
+
+  /**
+  * Toggles the open/close state for a detail section
+  * @method toggleContentSection
+  * @memberof ProjectStatusController
+  *
+  * @param {event} $event
+  **/
+  $scope.toggleContentSection = function($event){
+    var _collapasable = angular.element(($event.target)).parent();
+    _collapasable.toggleClass("project_details__collapsable--closed");
   }
 
 });

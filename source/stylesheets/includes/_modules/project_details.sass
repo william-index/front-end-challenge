@@ -33,10 +33,74 @@ article.project_details
     top: 0px
     left: 0px
 
-// Subsection styling
+
+// Collapsable sections
+.project_details__collapsable
+  +block(95%, auto)
+  margin: 25px auto
+  position: relative
+  max-height: 350px
+  overflow: hidden
+  +transition(max-height 0.5s)
+  border-bottom: 2px solid $mediumGrey
+
+  h1
+    +font(16, 18)
+    font-family: $sans
+    padding-left: 30px
+    color: $darkGrey
+
+  button.toggleState
+    +block(16px, 16px)
+    background: url(images/minus.svg)
+    position: absolute
+    top: 0px
+    left: 0px
+
+// closed state of collapsable view
+.project_details__collapsable--closed
+  max-height: 28px
+
+  button.toggleState
+    background: url(images/plus.svg)
+
+// Subsection styling for general details
 section.project_details__details
 
+  span.dates
+    position: absolute
+    top: 0px
+    right: 30px
+    +font(12, 18)
+    color: $mediumGrey
+    font-family: $sans
+  p
+    +font(12, 17)
+    color: $darkGrey
+    font-family: $sans
+    padding: 20px 30px
+
+// owner and completion styles
 section.project_details__owner
+  section.project_details__owner__author
+    padding-left: 30px
+    margin: 25px 0px
+    img
+      +block(40px, 40px)
+      float: left
+      border: 2px solid $mediumGrey
+      border-radius: 2px
+      background: url(images/avatar.svg)
+      background-size: cover
+    h2
+      display: block
+      float: left
+      color: $blue
+      font-family: $sans
+      +font(17, 17)
+      margin-top: 40px - 17
+      margin-left: 16px
+
   .progress_bar
     .progress_bar__gauge
     span.current

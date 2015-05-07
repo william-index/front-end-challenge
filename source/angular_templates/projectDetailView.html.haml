@@ -1,21 +1,33 @@
 ---
 layout: false
 ---
+-# Somewhere along the way this view became a bit bloated
+-# Given more time, I would probably break it apart a bit, esp. for status bar
 %article.project_details#project_details
   .close_cover{"ng-click" => "$parent.hideDetails(project)"}
+
   %section.project_details__wrap
     %header
       %h1 {{ info.name }}
-    %section.project_details__details
-      {{ info.start_date * 1000 | date:format:mediumDate }} to {{ info.end_date * 1000 | date:format:mediumDate }}
-      {{ info.description }}
-    %section.project_details__owner
-      {{ info.owner.image }}
-      {{ info.owner.name }}
+    %section.project_details__details.project_details__collapsable
+      %h1 Project Details
+      %span.dates
+        {{ info.start_date * 1000 | date:format:mediumDate }} to {{ info.end_date * 1000 | date:format:mediumDate }}
+      %p {{ info.description }}
+      %button.toggleState{"ng-click" => "$parent.toggleContentSection($event)"}
+
+    %section.project_details__owner.project_details__collapsable
+      %h1 Project Owner
+      %section.project_details__owner__author
+        %img{"ng-src" => "{{ info.owner.image }}", "alt" => "{{ info.owner.name }}"}
+        %h2.name {{ info.owner.name }}
 
       .progress_bar
         .progress_bar__gauge{style: "width:{{ (info.current_step/info.total_steps)*100 | number: 0 }}%;"}
-        %span.current {{ info.current_step }} / {{ info.total_steps }}
+        %span.current
+          <span>{{ info.current_step }}</span> / {{ info.total_steps }}
+
+      %button.toggleState{"ng-click" => "$parent.toggleContentSection($event)"}
 
     %button.project_details__close{"ng-click" => "$parent.hideDetails(project)"}
     .clear
