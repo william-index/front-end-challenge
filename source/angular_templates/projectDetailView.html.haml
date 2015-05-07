@@ -17,4 +17,5 @@ layout: false
         .progress_bar__gauge{style: "width:{{ (info.current_step/info.total_steps)*100 | number: 0 }}%;"}
         %span.current {{ info.current_step }} / {{ info.total_steps }}
 
+    %button.project_details__close{"ng-click" => "$parent.hideDetails(project)"}
     .clear

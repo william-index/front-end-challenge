@@ -18,7 +18,14 @@ article.project_details
     +transition-delay(0s)
 
   header
+    +block(95%, 50px)
+    border-bottom: 1px solid $orange
+    margin: 0px auto
     h1
+      +font(24, 50)
+      font-family: $sans
+      color: $darkGrey
+      font-weight: 300
 
   .close_cover
     +block(100%, 100%)
@@ -33,6 +40,17 @@ section.project_details__owner
   .progress_bar
     .progress_bar__gauge
     span.current
+
+// close button
+button.project_details__close
+  +block(16px, 16px)
+  background: url(images/x.svg)
+  background-size: cover
+  position: absolute
+  top: 20px
+  right: 30px
+  &:hover
+    opacity: 0.6
 
 
 //--------------------------//
