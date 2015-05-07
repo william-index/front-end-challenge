@@ -52,3 +52,7 @@ Items completed
 ### Detail View
 - [ ] Edit project
 - [ ] Navigate between projects
+
+
+## Assumed Like To Haves
+- [x] Plus/Minus toggle open states for project drawers

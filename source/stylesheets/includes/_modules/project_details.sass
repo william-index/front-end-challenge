@@ -102,8 +102,23 @@ section.project_details__owner
       margin-left: 16px
 
   .progress_bar
+    +block(172px, 12px)
+    float: left
+    clear: left
+    position: relative
+    margin: 30px 30px
     .progress_bar__gauge
+      outline: 2px solid white
+      height: 12px
     span.current
+      +font(13, 12)
+      font-family: $sans
+      color: $mediumGrey
+      position: absolute
+      top: 0px
+      right: -35px
+      span
+        color: $lightGreen
 
 // close button
 button.project_details__close
