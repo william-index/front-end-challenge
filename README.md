@@ -45,10 +45,10 @@ Items completed
 ## Like To Have
 ### List View
 - [x] Filtering for active/inactive projects
-- [] Create new project
+- [ ] Create new project
 - [x] Sorting on column headers
 - [x] Build progress bars for the `steps` column (otherwise just output text like "7 out of 19")
 
 ### Detail View
-- [] Edit project
-- [] Navigate between projects
+- [ ] Edit project
+- [ ] Navigate between projects
