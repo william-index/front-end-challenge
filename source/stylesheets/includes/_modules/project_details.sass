@@ -1,0 +1,46 @@
+article.project_details
+  +block(100%, 100%)
+  position: fixed
+  top: 0px
+  left: 0px
+  background: $lightGrey
+  +transition(all 1s)
+  opacity: 0
+  visibility: hidden
+
+  section.project_details__wrap
+    @extend %container
+    position: relative
+    // properties for animation
+    opacity: 0
+    +transform(translateY(-150px))
+    +transition(opacity 0.4s, transform 0.5s)
+    +transition-delay(0s)
+
+  header
+    h1
+
+  .close_cover
+    +block(100%, 100%)
+    position: fixed
+    top: 0px
+    left: 0px
+
+// Subsection styling
+section.project_details__details
+
+section.project_details__owner
+  .progress_bar
+    .progress_bar__gauge
+    span.current
+
+
+//--------------------------//
+// End State for displayed project detail container
+article.project_details--active
+  opacity: 1
+  visibility: visible
+  section.project_details__wrap
+    opacity: 1
+    +transform(translateY(0px))
+    +transition-delay(0.3s)

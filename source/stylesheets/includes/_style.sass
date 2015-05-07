@@ -1,13 +1,20 @@
-body
-  background: $lightGrey
+//--------------------
+// Global Level Extensions
 
-section.projects_index
+%container
   +block(80%, auto)
   max-width: 940px
   border: 1px solid $mediumGrey
   +border-top-radius(10px)
-  margin: 90px auto
   background: white
+  margin: 90px auto
+
+//---------------------
+body
+  background: $lightGrey
+
+section.projects_index
+  @extend %container
   padding-bottom: 60px
 
 // General column styling
@@ -30,3 +37,4 @@ section.projects_index
 @import '_modules/projects_index__header'
 @import '_modules/column_heads'
 @import '_modules/project_row'
+@import '_modules/project_details'
